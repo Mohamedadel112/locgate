@@ -183,14 +183,40 @@
 
   /* ── CLIENTS ── */
   #clients{background:var(--bg);}
-  .clients-marquee{overflow:hidden;position:relative;padding:20px 0;}
-  .clients-marquee::before,.clients-marquee::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;}
+  .clients-marquee{overflow:hidden;position:relative;padding:24px 0;}
+  .clients-marquee::before,.clients-marquee::after{content:'';position:absolute;top:0;bottom:0;width:140px;z-index:2;}
   .clients-marquee::before{left:0;background:linear-gradient(90deg,var(--bg),transparent);}
   .clients-marquee::after{right:0;background:linear-gradient(-90deg,var(--bg),transparent);}
-  .clients-track{display:flex;gap:40px;animation:marquee 18s linear infinite;width:max-content;}
+  .clients-track{display:flex;gap:20px;animation:marquee 32s linear infinite;width:max-content;align-items:center;}
   @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-  .client-logo{background:var(--card);border:1px solid rgba(45,212,191,0.12);padding:18px 36px;font-family:'Orbitron',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:2px;color:var(--muted);white-space:nowrap;transition:all .3s;flex-shrink:0;}
-  .client-logo:hover{border-color:var(--teal);color:var(--teal);box-shadow:0 0 16px rgba(45,212,191,0.3);}
+  .client-card{
+    flex-shrink:0;width:160px;
+    background:var(--card);
+    border:1px solid rgba(45,212,191,0.1);
+    border-radius:14px;
+    padding:20px 16px 14px;
+    display:flex;flex-direction:column;align-items:center;gap:12px;
+    transition:all .35s;position:relative;overflow:hidden;
+    cursor:default;
+  }
+  .client-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--teal),transparent);transform:scaleX(0);transition:transform .35s;}
+  .client-card:hover{border-color:rgba(45,212,191,0.45);box-shadow:0 0 24px rgba(45,212,191,0.18);transform:translateY(-5px);}
+  .client-card:hover::after{transform:scaleX(1);}
+  .client-logo-box{
+    width:110px;height:52px;
+    background:#fff;
+    border-radius:8px;
+    display:flex;align-items:center;justify-content:center;
+    padding:6px 10px;
+  }
+  .client-logo-box svg{width:100%;height:100%;display:block;}
+  .client-label{
+    font-family:'Orbitron',sans-serif;font-size:.58rem;
+    letter-spacing:1.5px;color:var(--muted);
+    text-transform:uppercase;text-align:center;
+    transition:color .3s;
+  }
+  .client-card:hover .client-label{color:var(--teal);}
 
   /* ── CONTACT ── */
   #contact{background:var(--bg2);}
@@ -432,14 +458,149 @@
   <div class="section-eyebrow reveal">Trusted By</div>
   <h2 class="section-title reveal">Our <span>Clients</span></h2>
   <div class="clients-marquee reveal">
-    <div class="clients-track">
-      <div class="client-logo">Canon</div><div class="client-logo">Videojet</div><div class="client-logo">TOYOTA</div>
-      <div class="client-logo">TOSHIBA</div><div class="client-logo">AGFA</div><div class="client-logo">Microsoft</div>
-      <div class="client-logo">SONY</div><div class="client-logo">Kodak</div><div class="client-logo">Sandoz</div>
-      <div class="client-logo">Canon</div><div class="client-logo">ALCATEL</div><div class="client-logo">TOYOTA</div>
-      <div class="client-logo">TOSHIBA</div><div class="client-logo">Lenovo</div><div class="client-logo">Amazon</div>
-      <div class="client-logo">Promethean</div><div class="client-logo">Kodak</div><div class="client-logo">CAT Caterpillar</div>
-    </div>
+    <div class="clients-track" id="clientsTrack">
+
+      <!-- CANON -->
+      <div class="client-card">
+        <div class="client-logo-box">
+          <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+            <text x="60" y="30" font-family="Arial,sans-serif" font-size="28" font-weight="bold" fill="#CC0000" text-anchor="middle">Canon</text>
+          </svg>
+        </div>
+        <div class="client-label">Canon</div>
+      </div>
+
+      <!-- TOYOTA -->
+      <div class="client-card">
+        <div class="client-logo-box">
+          <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+            <!-- Toyota 3-oval emblem simplified -->
+            <ellipse cx="60" cy="20" rx="28" ry="16" fill="none" stroke="#CC0000" stroke-width="3"/>
+            <ellipse cx="60" cy="20" rx="14" ry="10" fill="none" stroke="#CC0000" stroke-width="2.5"/>
+            <ellipse cx="60" cy="20" rx="6" ry="16" fill="none" stroke="#CC0000" stroke-width="2"/>
+            <text x="60" y="36" font-family="Arial,sans-serif" font-size="7" font-weight="bold" fill="#333" text-anchor="middle">TOYOTA</text>
+          </svg>
+        </div>
+        <div class="client-label">Toyota</div>
+      </div>
+
+      <!-- TOSHIBA -->
+      <div class="client-card">
+        <div class="client-logo-box">
+          <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="120" height="40" rx="4" fill="#E60012"/>
+            <text x="60" y="27" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">TOSHIBA</text>
+          </svg>
+        </div>
+        <div class="client-label">Toshiba</div>
+      </div>
+
+      <!-- SONY -->
+      <div class="client-card">
+        <div class="client-logo-box">
+          <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+            <text x="60" y="30" font-family="Arial,sans-serif" font-size="30" font-weight="bold" fill="#000" text-anchor="middle">SONY</text>
+          </svg>
+        </div>
+        <div class="client-label">Sony</div>
+      </div>
+
+      <!-- KODAK -->
+      <div class="client-card">
+        <div class="client-logo-box">
+          <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="120" height="40" rx="4" fill="#FFD700"/>
+            <text x="60" y="28" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#CC0000" text-anchor="middle">KODAK</text>
+          </svg>
+        </div>
+        <div class="client-label">Kodak</div>
+      </div>
+
+      <!-- MICROSOFT -->
+      <div class="client-card">
+        <div class="client-logo-box">
+          <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+            <!-- 4-color Windows squares -->
+            <rect x="4" y="4" width="14" height="14" fill="#F25022"/>
+            <rect x="20" y="4" width="14" height="14" fill="#7FBA00"/>
+            <rect x="4" y="20" width="14" height="14" fill="#00A4EF"/>
+            <rect x="20" y="20" width="14" height="14" fill="#FFB900"/>
+            <text x="74" y="27" font-family="Arial,sans-serif" font-size="11" font-weight="bold" fill="#737373" text-anchor="middle">Microsoft</text>
+          </svg>
+        </div>
+        <div class="client-label">Microsoft</div>
+      </div>
+
+      <!-- AMAZON -->
+      <div class="client-card">
+        <div class="client-logo-box">
+          <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+            <text x="60" y="22" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#232F3E" text-anchor="middle">amazon</text>
+            <!-- smile arrow -->
+            <path d="M 32 30 Q 60 40 88 30" fill="none" stroke="#FF9900" stroke-width="3" stroke-linecap="round"/>
+            <polygon points="86,27 90,30 86,33" fill="#FF9900"/>
+          </svg>
+        </div>
+        <div class="client-label">Amazon</div>
+      </div>
+
+      <!-- LENOVO -->
+      <div class="client-card">
+        <div class="client-logo-box">
+          <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="120" height="40" rx="4" fill="#E2001A"/>
+            <text x="60" y="28" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#fff" text-anchor="middle">Lenovo</text>
+          </svg>
+        </div>
+        <div class="client-label">Lenovo</div>
+      </div>
+
+      <!-- PIONEER -->
+      <div class="client-card">
+        <div class="client-logo-box">
+          <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+            <text x="60" y="28" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#000" text-anchor="middle">PIONEER</text>
+            <line x1="10" y1="32" x2="110" y2="32" stroke="#000" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="client-label">Pioneer</div>
+      </div>
+
+      <!-- GE -->
+      <div class="client-card">
+        <div class="client-logo-box">
+          <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="60" cy="20" r="18" fill="#00ADEF"/>
+            <text x="60" y="26" font-family="serif" font-size="20" font-weight="bold" font-style="italic" fill="#fff" text-anchor="middle">ge</text>
+          </svg>
+        </div>
+        <div class="client-label">GE</div>
+      </div>
+
+      <!-- RENAULT -->
+      <div class="client-card">
+        <div class="client-logo-box">
+          <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+            <!-- Renault diamond -->
+            <polygon points="60,4 76,20 60,36 44,20" fill="#FFB612" stroke="#FFB612" stroke-width="1"/>
+            <polygon points="60,10 70,20 60,30 50,20" fill="#fff"/>
+            <text x="60" y="37" font-family="Arial,sans-serif" font-size="7" font-weight="bold" fill="#333" text-anchor="middle" display="none">RENAULT</text>
+          </svg>
+        </div>
+        <div class="client-label">Renault</div>
+      </div>
+
+      <!-- ALCATEL -->
+      <div class="client-card">
+        <div class="client-logo-box">
+          <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+            <text x="60" y="27" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="#003DA5" text-anchor="middle">ALCATEL</text>
+          </svg>
+        </div>
+        <div class="client-label">Alcatel</div>
+      </div>
+
+    </div><!-- end track -->
   </div>
 </div></section>
 
