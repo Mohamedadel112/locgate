@@ -145,15 +145,22 @@
 
   /* ── LANGUAGES ── */
   #languages{background:var(--bg2);}
-  .lang-flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;margin-bottom:60px;}
-  .lang-source{display:flex;flex-direction:column;gap:12px;}
-  .lang-arrow-zone{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 40px;}
-  .arrow-line{width:100px;height:1px;background:linear-gradient(90deg,transparent,var(--teal),transparent);box-shadow:0 0 8px var(--teal);position:relative;animation:arrowPulse 2s ease-in-out infinite;margin:12px 0;}
-  .arrow-line::after{content:'▶';position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:var(--teal);font-size:.7rem;}
-  @keyframes arrowPulse{0%,100%{opacity:.6;}50%{opacity:1;box-shadow:0 0 16px var(--teal);}}
-  .lang-target{font-family:'Orbitron',sans-serif;font-size:1.5rem;font-weight:700;padding:18px 32px;border:2px solid var(--teal);box-shadow:0 0 20px var(--teal),inset 0 0 20px rgba(45,212,191,0.06);color:var(--teal-glow);text-shadow:0 0 10px var(--teal);animation:neonPulse 3s ease-in-out infinite;}
-  .lang-chip{background:var(--card);border:1px solid rgba(45,212,191,0.25);padding:10px 22px;font-size:.9rem;font-weight:500;letter-spacing:1px;color:var(--text);transition:all .3s;}
-  .lang-chip:hover{border-color:var(--teal);color:var(--teal-glow);box-shadow:0 0 12px var(--teal);}
+  .lang-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:14px;margin-bottom:56px;}
+  .lang-card{background:var(--card);border:1px solid rgba(45,212,191,0.12);border-radius:12px;padding:18px 12px 14px;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:default;transition:all .35s;position:relative;overflow:hidden;}
+  .lang-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--teal),transparent);transform:scaleX(0);transition:transform .35s;}
+  .lang-card:hover{background:var(--card2);border-color:rgba(45,212,191,0.45);transform:translateY(-4px);box-shadow:0 8px 28px rgba(45,212,191,0.14);}
+  .lang-card:hover::after{transform:scaleX(1);}
+  .lang-flag-img{
+    width:52px;height:34px;
+    border-radius:4px;
+    object-fit:cover;
+    border:1px solid rgba(255,255,255,0.1);
+    box-shadow:0 2px 8px rgba(0,0,0,0.4);
+    display:block;
+  }
+  .lang-name{font-family:'Orbitron',sans-serif;font-size:.62rem;letter-spacing:1.5px;color:var(--teal);text-transform:uppercase;text-align:center;margin-top:2px;}
+  .lang-native{font-size:.73rem;color:var(--muted);text-align:center;font-style:italic;line-height:1.3;}
+
   .cat-tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;}
   .tool-chip{background:var(--card);border:1px solid rgba(45,212,191,0.15);padding:12px 16px;text-align:center;font-size:.82rem;color:var(--muted);transition:all .3s;}
   .tool-chip:hover{border-color:var(--teal);color:var(--teal);box-shadow:0 0 10px rgba(45,212,191,0.3);}
@@ -327,18 +334,30 @@
 <section id="languages"><div class="container">
   <div class="section-eyebrow reveal">Language Pairs</div>
   <h2 class="section-title reveal">Languages</span></h2>
-  <div class="lang-flow reveal">
-    <div class="lang-source"><div class="lang-chip">🇬🇧 English</div><div class="lang-chip">🇫🇷 French</div><div class="lang-chip">🇩🇪 German</div></div>
-    <div class="lang-arrow-zone"><div class="arrow-line"></div><div class="arrow-line" style="animation-delay:.4s"></div><div class="arrow-line" style="animation-delay:.8s"></div></div>
-    <div class="lang-target">🇸🇦 Arabic</div>
-  </div>
-  <div class="lang-flow reveal" style="margin-bottom:56px;">
-    <div class="lang-source"><div class="lang-chip">🇬🇧 English</div></div>
-    <div class="lang-arrow-zone"><div class="arrow-line"></div></div>
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <div class="lang-target" style="font-size:1.2rem;padding:14px 28px;">🇹🇷 Turkish</div>
-      <div class="lang-target" style="font-size:1.2rem;padding:14px 28px;">🇮🇷 Farsi</div>
-    </div>
+  <div class="lang-grid reveal">
+    <!-- flagcdn.com format: https://flagcdn.com/w80/{2-letter-country-code}.png -->
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/sa.png" alt="Arabic flag"/><div class="lang-name">Arabic</div><div class="lang-native">العربية</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/tr.png" alt="Turkish flag"/><div class="lang-name">Turkish</div><div class="lang-native">Türkçe</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/iq.png" alt="Kurdish flag"/><div class="lang-name">Kurdish</div><div class="lang-native">کوردی</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/ir.png" alt="Farsi flag"/><div class="lang-name">Farsi</div><div class="lang-native">فارسی</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/za.png" alt="Zulu flag"/><div class="lang-name">Zulu</div><div class="lang-native">isiZulu</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/ng.png" alt="Hausa flag"/><div class="lang-name">Hausa</div><div class="lang-native">Hausa</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/ke.png" alt="Swahili flag"/><div class="lang-name">Swahili</div><div class="lang-native">Kiswahili</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/et.png" alt="Amharic flag"/><div class="lang-name">Amharic</div><div class="lang-native">አማርኛ</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/cn.png" alt="Chinese flag"/><div class="lang-name">Chinese</div><div class="lang-native">中文</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/kr.png" alt="Korean flag"/><div class="lang-name">Korean</div><div class="lang-native">한국어</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/th.png" alt="Thai flag"/><div class="lang-name">Thai</div><div class="lang-native">ภาษาไทย</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/my.png" alt="Malay flag"/><div class="lang-name">Malay</div><div class="lang-native">Bahasa Melayu</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/jp.png" alt="Japanese flag"/><div class="lang-name">Japanese</div><div class="lang-native">日本語</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/in.png" alt="Hindi flag"/><div class="lang-name">Hindi</div><div class="lang-native">हिन्दी</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/vn.png" alt="Vietnamese flag"/><div class="lang-name">Vietnamese</div><div class="lang-native">Tiếng Việt</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/it.png" alt="Italian flag"/><div class="lang-name">Italian</div><div class="lang-native">Italiano</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/nl.png" alt="Dutch flag"/><div class="lang-name">Dutch</div><div class="lang-native">Nederlands</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/es.png" alt="Spanish flag"/><div class="lang-name">Spanish</div><div class="lang-native">Español</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/fr.png" alt="French flag"/><div class="lang-name">French</div><div class="lang-native">Français</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/gb.png" alt="English flag"/><div class="lang-name">English</div><div class="lang-native">English</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/de.png" alt="German flag"/><div class="lang-name">German</div><div class="lang-native">Deutsch</div></div>
+    <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/pt.png" alt="Portuguese flag"/><div class="lang-name">Portuguese</div><div class="lang-native">Português</div></div>
   </div>
   <div class="section-eyebrow reveal" style="margin-bottom:20px;">CAT Tools</div>
   <div class="cat-tools reveal">
