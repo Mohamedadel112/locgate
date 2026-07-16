@@ -220,28 +220,12 @@
 
   /* ── CONTACT ── */
   #contact{background:var(--bg2);}
-.contact-row {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap; /* للشاشات الصغيرة */
-    align-items: flex-start;
-}
-
-.contact-row p,
-.contact-row a {
-    margin: 0;
-    min-width: 220px;
-}
-
-.contact-row a {
-    color: var(--muted);
-    text-decoration: none;
-    transition: color .3s;
-}
-
-.contact-row a:hover {
-    color: var(--teal);
-}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+  .contact-item{display:flex;align-items:flex-start;gap:16px;margin-bottom:28px;}
+  .contact-icon{width:44px;height:44px;flex-shrink:0;border-radius:10px;background:linear-gradient(135deg,rgba(45,212,191,0.18),rgba(45,212,191,0.04));border:1px solid rgba(45,212,191,0.35);display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 0 12px rgba(45,212,191,0.2);}
+  .contact-item h4{font-family:'Orbitron',sans-serif;font-size:.7rem;letter-spacing:2px;color:var(--teal);margin-bottom:4px;}
+  .contact-item p,.contact-item a{font-size:.9rem;color:var(--muted);text-decoration:none;transition:color .3s;line-height:1.7;}
+  .contact-item a:hover{color:var(--teal);}
   .contact-form{display:flex;flex-direction:column;gap:14px;}
   .contact-form input,.contact-form textarea{background:var(--card);border:1px solid rgba(45,212,191,0.2);color:var(--text);padding:13px 16px;font-family:'Inter',sans-serif;font-size:.9rem;outline:none;transition:all .3s;resize:none;}
   .contact-form input:focus,.contact-form textarea:focus{border-color:var(--teal);box-shadow:0 0 12px rgba(45,212,191,0.2);}
@@ -567,34 +551,21 @@
   <div class="contact-grid">
     <div class="reveal">
       <!-- ⑥ updated address -->
-    <div class="contact-item">
-    <div class="contact-icon">📍</div>
-
-    <div>
-        <h4>Addresses</h4>
-
-        <div class="contact-row">
-            <p>Al Barsha 1,<br>Dubai, UAE</p>
-
-            <p>Mohy El-Din Abu El-Ezz,<br>Giza, Egypt</p>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <h4>Addresses</h4>
+          <p> Al Barsha 1,<br/>Dubai, UAE</p>
+          <p>Mohy El-Din Abu El-Ezz,<br/>Giza, Egypt</p>
         </div>
-    </div>
-</div>
-<!-- phone -->
-    <div class="contact-item">
-    <div class="contact-icon">📞</div>
-
-    <div>
-        <h4>Phone</h4>
-
-        <div class="contact-row">
-            <a href="tel:+971559299016">(+971) 55 929 9016</a>
-
-            <a href="tel:+201003908738">(+20) 100 390 8738</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div><h4>Phone</h4><a href="tel:+971559299016">(+97) 1 55 929 9016</a><br>
+        <a href="tel:+201003908738">(+2) 01003908738</a>
         </div>
-    </div>
-</div>
-<!-- email -->
+
+      </div>
       <div class="contact-item">
         <div class="contact-icon">✉️</div>
         <div><h4>Email</h4><a href="mailto:info@loc-gate.com">info@loc-gate.com</a></div>
