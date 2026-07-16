@@ -95,7 +95,7 @@
   /* ── ABOUT ── */
   #about{background:var(--bg2);}
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
-  .about-text p{color:var(--muted);line-height:1.9;font-size:3rem;margin-bottom:20px;}
+  .about-text p{color:var(--muted);line-height:1.9;font-size:2rem;margin-bottom:20px;}
   .about-text p strong{color:var(--teal);}
   .values-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   .value-card{background:var(--card);padding:28px;position:relative;overflow:hidden;transition:all .4s;cursor:default;}
@@ -220,12 +220,28 @@
 
   /* ── CONTACT ── */
   #contact{background:var(--bg2);}
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
-  .contact-item{display:flex;align-items:flex-start;gap:16px;margin-bottom:28px;}
-  .contact-icon{width:44px;height:44px;flex-shrink:0;border-radius:10px;background:linear-gradient(135deg,rgba(45,212,191,0.18),rgba(45,212,191,0.04));border:1px solid rgba(45,212,191,0.35);display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 0 12px rgba(45,212,191,0.2);}
-  .contact-item h4{font-family:'Orbitron',sans-serif;font-size:.7rem;letter-spacing:2px;color:var(--teal);margin-bottom:4px;}
-  .contact-item p,.contact-item a{font-size:.9rem;color:var(--muted);text-decoration:none;transition:color .3s;line-height:1.7;}
-  .contact-item a:hover{color:var(--teal);}
+.contact-row {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap; /* للشاشات الصغيرة */
+    align-items: flex-start;
+}
+
+.contact-row p,
+.contact-row a {
+    margin: 0;
+    min-width: 220px;
+}
+
+.contact-row a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color .3s;
+}
+
+.contact-row a:hover {
+    color: var(--teal);
+}
   .contact-form{display:flex;flex-direction:column;gap:14px;}
   .contact-form input,.contact-form textarea{background:var(--card);border:1px solid rgba(45,212,191,0.2);color:var(--text);padding:13px 16px;font-family:'Inter',sans-serif;font-size:.9rem;outline:none;transition:all .3s;resize:none;}
   .contact-form input:focus,.contact-form textarea:focus{border-color:var(--teal);box-shadow:0 0 12px rgba(45,212,191,0.2);}
@@ -291,7 +307,7 @@
 
 <!-- ABOUT -->
 <section id="about"><div class="container">
-  <div class="section-eyebrow reveal">Who We Are</div>
+
   <h2 class="section-title reveal">Translation & Localization <span>Experts</span></h2>
   <div class="about-grid">
     <div class="about-text reveal">
@@ -324,7 +340,7 @@
 
 <!-- SERVICES -->
 <section id="services"><div class="container">
-  <div class="section-eyebrow reveal">What We Do</div>
+  
   <h2 class="section-title reveal">Our <span>Services</span></h2>
   <div class="services-grid">
     <!-- ⑤ modern icon boxes -->
@@ -369,7 +385,7 @@
 
 <!-- LANGUAGES -->
 <section id="languages"><div class="container">
-  <div class="section-eyebrow reveal">Language Pairs</div>
+  
   <h2 class="section-title reveal">Languages</span></h2>
   <div class="lang-grid reveal">
     <!-- flagcdn.com format: https://flagcdn.com/w80/{2-letter-country-code}.png -->
@@ -406,7 +422,7 @@
 
 <!-- INDUSTRIES -->
 <section id="industries"><div class="container">
-  <div class="section-eyebrow reveal">Sectors We Serve</div>
+
   <h2 class="section-title reveal"> <span>Industries</span></h2>
   <div class="industries-wrap reveal">
     <div class="ind-tag">🎓 Academic</div><div class="ind-tag">🚗 Automotive</div>
@@ -421,7 +437,7 @@
 
 <!-- DTP -->
 <section id="dtp"><div class="container">
-  <div class="section-eyebrow reveal">Design &amp; Publishing</div>
+
   <h2 class="section-title reveal">Desktop Publishing &amp; <span>Typesetting</span></h2>
   <div class="dtp-grid">
     <div class="reveal">
@@ -447,7 +463,7 @@
       <br/>
       <div style="background:var(--card);border-left:3px solid var(--teal);padding:20px 24px;box-shadow:-2px 0 16px rgba(45,212,191,0.2);">
         <h4 style="font-family:'Orbitron',sans-serif;font-size:.7rem;letter-spacing:2px;color:var(--teal);margin-bottom:8px;">Quality Assurance</h4>
-        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;">Perfectionism is the main goal our QA specialists seek — applying a complete quality cycle to every file or product to ensure error-free output.</p>
+        <p style="color:var(--muted);font-size:.88rem;line-height:1.7;">Applying a complete quality cycle to every file or product to ensure error-free output.</p>
       </div>
     </div>
   </div>
@@ -455,7 +471,7 @@
 
 <!-- CLIENTS -->
 <section id="clients"><div class="container">
-  <div class="section-eyebrow reveal">Trusted By</div>
+
   <h2 class="section-title reveal">Our <span>Clients</span></h2>
   <div class="clients-marquee reveal">
     <div class="clients-track" id="clientsTrack">
@@ -546,26 +562,39 @@
 
 <!-- CONTACT -->
 <section id="contact"><div class="container">
-  <div class="section-eyebrow reveal">Reach Out</div>
+  
   <h2 class="section-title reveal">Get In <span>Touch</span></h2>
   <div class="contact-grid">
     <div class="reveal">
       <!-- ⑥ updated address -->
-      <div class="contact-item">
-        <div class="contact-icon">📍</div>
-        <div>
-          <h4>Addresses</h4>
-          <p> Al Barsha 1,<br/>Dubai, UAE</p>
-          <p>Mohy El-Din Abu El-Ezz,<br/>Giza, Egypt</p>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">📞</div>
-        <div><h4>Phone</h4><a href="tel:+971559299016">(+97) 1 55 929 9016</a><br>
-        <a href="tel:+201003908738">(+2) 01003908738</a>
-        </div>
+    <div class="contact-item">
+    <div class="contact-icon">📍</div>
 
-      </div>
+    <div>
+        <h4>Addresses</h4>
+
+        <div class="contact-row">
+            <p>Al Barsha 1,<br>Dubai, UAE</p>
+
+            <p>Mohy El-Din Abu El-Ezz,<br>Giza, Egypt</p>
+        </div>
+    </div>
+</div>
+<!-- phone -->
+    <div class="contact-item">
+    <div class="contact-icon">📞</div>
+
+    <div>
+        <h4>Phone</h4>
+
+        <div class="contact-row">
+            <a href="tel:+971559299016">(+971) 55 929 9016</a>
+
+            <a href="tel:+201003908738">(+20) 100 390 8738</a>
+        </div>
+    </div>
+</div>
+<!-- email -->
       <div class="contact-item">
         <div class="contact-icon">✉️</div>
         <div><h4>Email</h4><a href="mailto:info@loc-gate.com">info@loc-gate.com</a></div>
