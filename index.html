@@ -105,16 +105,39 @@
   .value-card:hover::before{border-color:rgba(45,212,191,0.5);}
   .value-card:hover::after{width:100%;}
   /* ⑤ modern icon box */
-  .value-icon{
-    width:48px;height:48px;border-radius:12px;
-    background:linear-gradient(135deg,rgba(45,212,191,0.18),rgba(45,212,191,0.05));
-    border:1px solid rgba(45,212,191,0.3);
-    display:flex;align-items:center;justify-content:center;
-    font-size:1.4rem;margin-bottom:14px;
-    box-shadow:0 0 12px rgba(45,212,191,0.12);
-  }
-  .value-card h4{font-family:'Orbitron',sans-serif;font-size:.75rem;letter-spacing:2px;color:var(--teal);margin-bottom:6px;}
-  .value-card p{font-size:.85rem;color:var(--muted);}
+.value-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(45,212,191,0.18), rgba(45,212,191,0.05));
+    border: 1px solid rgba(45,212,191,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    box-shadow: 0 0 12px rgba(45,212,191,0.12);
+
+    /* Remove this */
+    margin-bottom: 0;
+
+    /* Prevent the icon from shrinking */
+    flex-shrink: 0;
+}
+
+.value-card h4 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: .75rem;
+    letter-spacing: 2px;
+    color: var(--teal);
+
+    /* Remove this */
+    margin: 0;
+}
+
+.value-card p {
+    font-size: .85rem;
+    color: var(--muted);
+}
 
   /* ── SERVICES ── */
   #services{background:var(--bg);}
@@ -303,7 +326,8 @@
     <div class="values-grid reveal">
       <div class="value-card">
         <div class="value-icon">✦</div>
-        <h4>Quality</h4><p>Every file goes through a rigorous quality cycle to ensure error-free output.</p>
+        <h4>Quality</h4>
+        <p>Every file goes through a rigorous quality cycle to ensure error-free output.</p>
       </div>
       <div class="value-card">
         <div class="value-icon">◈</div>
