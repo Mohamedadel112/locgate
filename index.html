@@ -80,7 +80,7 @@
     font-weight:300;animation:fadeUp .8s .3s ease forwards;opacity:0;
   }
 
-  .hero-sub{font-size:2.05rem;color:var(--text);max-width:620px;margin:0 auto 48px;line-height:1.8;animation:fadeUp .8s .45s ease forwards;opacity:0;}
+  .hero-sub{font-size:1.45rem;color:var(--text);max-width:620px;margin:0 auto 48px;line-height:1.8;animation:fadeUp .8s .45s ease forwards;opacity:0;}
   .hero-btns{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s .6s ease forwards;opacity:0;}
   @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
 
@@ -95,7 +95,7 @@
   /* ── ABOUT ── */
   #about{background:var(--bg2);}
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
-  .about-text p{color:var(--muted);line-height:1.9;font-size:2rem;margin-bottom:20px;}
+  .about-text p{color:var(--muted);line-height:1.9;font-size:1.4rem;margin-bottom:20px;}
   .about-text p strong{color:var(--teal);}
   .values-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   .value-card{background:var(--card);padding:28px;position:relative;overflow:hidden;transition:all .4s;cursor:default;}
@@ -110,11 +110,17 @@
     background:linear-gradient(135deg,rgba(45,212,191,0.18),rgba(45,212,191,0.05));
     border:1px solid rgba(45,212,191,0.3);
     display:flex;align-items:center;justify-content:center;
-    font-size:1.4rem;margin-bottom:14px;
+    font-size:1.4rem;margin-bottom:0px;
     box-shadow:0 0 12px rgba(45,212,191,0.12);
   }
-  .value-card h4{font-family:'Orbitron',sans-serif;font-size:.75rem;letter-spacing:2px;color:var(--teal);margin-bottom:6px;}
+  .value-card h4{font-family:'Orbitron',sans-serif;font-size:.75rem;letter-spacing:2px;color:var(--teal);margin:0px;}
   .value-card p{font-size:.85rem;color:var(--muted);}
+  .value-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
 
   /* ── SERVICES ── */
   #services{background:var(--bg);}
@@ -268,7 +274,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#languages">Languages</a></li>
-    <li><a href="#industries">Industries</a></li>
+    <li><a href="#AI Data Annotation">AI Data Annotation</a></li>
     <li><a href="#dtp">DTP</a></li>
     <li><a href="#clients">Clients</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -281,11 +287,11 @@
   <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
   <div class="hero-content">
     <!-- ③ enlarged + bold -->
-    <p class="hero-eyebrow"> Translation ,Localization &amp; AI Data Annotation</p>
+    <p class="hero-eyebrow"> Translation,Localization &amp; AI Data Annotation</p>
     <h1 class="hero-logo">L<span class="key-icon"></span>c<span class="gate-part">-Gate</span></h1>
     <!-- ④ has margin-top for space from logo -->
     <p class="hero-tagline">Succeeding Across Cultures</p>
-    <p class="hero-sub">Empowering global businesses through premium translation, localization, and DTP solutions by providing the confidence to their products and services in targeted local markets. </p>
+    <p class="hero-sub">Empowering global businesses through premium translation, localization, and DTP solutions by providing the confidence to products and services . </p>
     <!-- ② enlarged buttons -->
     <div class="hero-btns">
       <a href="#services" class="neon-btn">Explore Services</a>
@@ -297,7 +303,7 @@
 <!-- ABOUT -->
 <section id="about"><div class="container">
 
-  <h2 class="section-title reveal">Translation ,Localization & AI Data Annotation <span>Experts</span></h2>
+  <h2 class="section-title reveal">Translation,Localization & AI Data Annotation <br><br><br></br><span>Experts</span></h2>
   <div class="about-grid">
     <div class="about-text reveal">
       <p>LocGate is a <strong>regional language vendor</strong> providing a full range of translation services, relying on native, specialized, and professional translators committed to <strong>excellent quality, on-time delivery and best-in-class technology tools — always at friendly prices </strong>.</p>
@@ -307,21 +313,32 @@
     <!-- ⑤ modern icons -->
     <div class="values-grid reveal">
       <div class="value-card">
+        <div class="value-header">
         <div class="value-icon">✦</div>
         <h4>Quality</h4>
+        </div>
         <p>Every file goes through a rigorous quality cycle to ensure error-free output.</p>
       </div>
       <div class="value-card">
+        <div class="value-header">
         <div class="value-icon">◈</div>
-        <h4>Professionalism</h4><p>Native experts, certified workflows, and industry-standard CAT tools.</p>
+        <h4>Professionalism</h4>
+      </div>
+        <p>Native experts, certified workflows, and industry-standard CAT tools.</p>
       </div>
       <div class="value-card">
-        <div class="value-icon">◎</div>
-        <h4>Transparency</h4><p>Clear timelines, honest pricing, and open communication throughout.</p>
+        <div class="value-header">
+          <div class="value-icon">◎</div>
+          <h4>Transparency</h4>
+        </div>
+        <p>Clear timelines, honest pricing, and open communication throughout.</p>
       </div>
       <div class="value-card">
-        <div class="value-icon">⬡</div>
-        <h4>Confidentiality</h4><p>Your content is protected — strict NDAs and secure handling, always.</p>
+        <div class="value-header">
+          <div class="value-icon">⬡</div>
+          <h4>Confidentiality</h4>
+        </div>
+        <p>Your content is protected — strict NDAs and secure handling, always.</p>
       </div>
     </div>
   </div>
@@ -375,7 +392,7 @@
 <!-- LANGUAGES -->
 <section id="languages"><div class="container">
   
-  <h2 class="section-title reveal">Languages</span></h2>
+  <h2 class="section-title reveal">Translation & Languages</span></h2>
   <div class="lang-grid reveal">
     <!-- flagcdn.com format: https://flagcdn.com/w80/{2-letter-country-code}.png -->
     <div class="lang-card"><img class="lang-flag-img" src="https://flagcdn.com/w80/sa.png" alt="Arabic flag"/><div class="lang-name">Arabic</div><div class="lang-native">العربية</div></div>
@@ -410,18 +427,10 @@
 </div></section>
 
 <!-- INDUSTRIES -->
-<section id="industries"><div class="container">
+<section id="AI Data Annotation"><div class="container">
 
-  <h2 class="section-title reveal"> <span>Industries</span></h2>
-  <div class="industries-wrap reveal">
-    <div class="ind-tag">🎓 Academic</div><div class="ind-tag">🚗 Automotive</div>
-    <div class="ind-tag">📺 Broadcasting</div><div class="ind-tag">🏗️ Construction</div><div class="ind-tag">⚡ Energy</div>
-    <div class="ind-tag">⚙️ Engineering</div><div class="ind-tag">💹 Finance</div><div class="ind-tag">🌍 General</div>
-    <div class="ind-tag">🏛️ Government</div><div class="ind-tag">💻 Hardware</div><div class="ind-tag">🛡️ Insurance</div>
-    <div class="ind-tag">⚖️ Legal</div><div class="ind-tag">🧬 Life Sciences</div><div class="ind-tag">🏭 Manufacturing</div>
-    <div class="ind-tag">🏥 Medicine</div><div class="ind-tag">🛢️ Oil &amp; Gas</div><div class="ind-tag">💊 Pharmaceutical</div>
-    <div class="ind-tag">💾 Software</div><div class="ind-tag">✈️ Tourism</div>
-  </div>
+  <h2 class="section-title reveal"> <span>AI Data Annotation</span></h2>
+  
 </div></section>
 
 <!-- DTP -->
@@ -430,15 +439,9 @@
   <h2 class="section-title reveal">Desktop Publishing &amp; <span>Typesetting</span></h2>
   <div class="dtp-grid">
     <div class="reveal">
-      <p style="color:var(--muted);line-height:1.9;margin-bottom:28px;font-size:1.6rem;">We have extensive experience in Multilingual DTP for almost all languages ( RTL and LTR , across Eastern, Western, European, Asian, and African scripts).</p>
-      <p style="color:var(--muted);line-height:1.9;margin-bottom:28px;font-size:1.6rem;">Whatever your products are, we adapt them to targeted local markets, adding the sense, feeling, and cultural values — as if the content was originally created for those markets.</p>
-      <div class="section-eyebrow" style="margin-bottom:16px;">Document Types</div>
-      <div class="dtp-docs">
-        <span class="doc-tag">Brochures</span><span class="doc-tag">Catalogues</span><span class="doc-tag">Charts</span>
-        <span class="doc-tag">Documents</span><span class="doc-tag">Flyers</span><span class="doc-tag">Handbooks</span>
-        <span class="doc-tag">Manuals</span><span class="doc-tag">Presentations</span><span class="doc-tag">Proposals</span>
-        <span class="doc-tag">Reports</span><span class="doc-tag">Software</span><span class="doc-tag">Websites</span>
-      </div>
+      <p style="color:var(--muted);line-height:1.9;margin-bottom:28px;font-size:1.4rem;">We have extensive experience in Multilingual DTP for almost all languages ( RTL and LTR , across Eastern, Western, European, Asian, and African scripts).</p>
+      <p style="color:var(--muted);line-height:1.9;margin-bottom:28px;font-size:1.4rem;">Whatever your products are, we adapt them to targeted local markets, adding the sense, feeling, and cultural values — as if the content was originally created for those markets.</p>
+    
     </div>
     <div class="reveal">
       <div class="section-eyebrow" style="margin-bottom:16px;font-size:1.25rem;">DTP Tools</div>
@@ -448,12 +451,16 @@
         <div class="dtp-tool">Adobe DreamWeaver</div><div class="dtp-tool">Microsoft Office</div>
         <div class="dtp-tool">Adobe PageMaker</div><div class="dtp-tool">QuarkXPress</div>
       </div>
+        <div class="section-eyebrow" style="margin-bottom:16px;">Document Types</div>
+      <div class="dtp-docs">
+        <span class="doc-tag">Brochures</span><span class="doc-tag">Catalogues</span><span class="doc-tag">Charts</span>
+        <span class="doc-tag">Documents</span><span class="doc-tag">Flyers</span><span class="doc-tag">Handbooks</span>
+        <span class="doc-tag">Manuals</span><span class="doc-tag">Presentations</span><span class="doc-tag">Proposals</span>
+        <span class="doc-tag">Reports</span><span class="doc-tag">Software</span><span class="doc-tag">Websites</span>
+      </div>
     
       <br/>
-      <div style="background:var(--card);border-left:3px solid var(--teal);padding:20px 24px;box-shadow:-2px 0 16px rgba(45,212,191,0.2);">
-        <h4 style="font-family:'Orbitron',sans-serif;font-size:1.25rem;letter-spacing:2px;color:var(--teal);margin-bottom:8px;">Quality Assurance</h4>
-        <p style="color:var(--muted);font-size:1rem;line-height:1.7;">Applying a complete quality cycle to every file or product to ensure error-free output.</p>
-      </div>
+    
     </div>
   </div>
 </div></section>
