@@ -119,7 +119,7 @@
   /* ── SERVICES ── */
   #services{background:var(--bg);}
   .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:48px;}
-  .service-card{background:var(--card);padding:36px 28px;position:relative;overflow:hidden;transition:all .4s;cursor:pointer;text-decoration:none;color:inherit;display:block;}
+  .service-card{background:var(--card);padding:36px 28px;position:relative;overflow:hidden;transition:all .4s;cursor:pointer;text-decoration:none;color:inherit;display:block; font-size: 18px;}
   .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal2),var(--teal-glow));box-shadow:0 0 16px var(--teal);transform:scaleX(0);transform-origin:left;transition:transform .4s;}
   .service-card:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(45,212,191,0.15);background:var(--card2);}
   .service-card:hover::before{transform:scaleX(1);}
@@ -167,8 +167,8 @@
 
   /* ── INDUSTRIES ── */
   #industries{background:var(--bg);}
-  .industries-wrap{display:flex;flex-wrap:wrap;gap:12px;}
-  .ind-tag{background:var(--card);border:1px solid rgba(45,212,191,0.15);padding:10px 20px;font-size:.83rem;color:var(--muted);letter-spacing:.5px;transition:all .3s;cursor:default;}
+  .industries-wrap{display:flex;flex-wrap:wrap;gap:16px;}
+  .ind-tag{background:var(--card);border:1px solid rgba(45,212,191,0.15);padding:10px 20px;font-size:.100rem;color:var(--muted);letter-spacing:.5px;transition:all .3s;cursor:default;}
   .ind-tag:hover{background:rgba(45,212,191,0.08);border-color:var(--teal);color:var(--teal);box-shadow:0 0 12px rgba(45,212,191,0.25);transform:translateY(-2px);}
 
   /* ── DTP ── */
@@ -593,7 +593,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">L<span class="loc">oc</span><span class="gate">Gate</span></div>
+  <div class="footer-logo">L<span class="loc">oc-</span><span class="gate">Gate</span></div>
   <p>© 2015 LocGate. All rights reserved. Succeeding Across Cultures.</p>
   <nav>
     <a href="#about">About</a><a href="#services">Services</a>
