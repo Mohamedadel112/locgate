@@ -80,7 +80,7 @@
     font-weight:300;animation:fadeUp .8s .3s ease forwards;opacity:0;
   }
 
-  .hero-sub{font-size:1.05rem;color:var(--text);max-width:620px;margin:0 auto 48px;line-height:1.8;animation:fadeUp .8s .45s ease forwards;opacity:0;}
+  .hero-sub{font-size:2.05rem;color:var(--text);max-width:620px;margin:0 auto 48px;line-height:1.8;animation:fadeUp .8s .45s ease forwards;opacity:0;}
   .hero-btns{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s .6s ease forwards;opacity:0;}
   @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
 
@@ -118,7 +118,7 @@
 
   /* ── SERVICES ── */
   #services{background:var(--bg);}
-  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:38px;}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;}
   .service-card{background:var(--card);padding:36px 28px;position:relative;overflow:hidden;transition:all .4s;cursor:pointer;text-decoration:none;color:inherit;display:block;}
   .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal2),var(--teal-glow));box-shadow:0 0 16px var(--teal);transform:scaleX(0);transform-origin:left;transition:transform .4s;}
   .service-card:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(45,212,191,0.15);background:var(--card2);}
@@ -225,6 +225,10 @@
   .contact-icon{width:44px;height:44px;flex-shrink:0;border-radius:10px;background:linear-gradient(135deg,rgba(45,212,191,0.18),rgba(45,212,191,0.04));border:1px solid rgba(45,212,191,0.35);display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 0 12px rgba(45,212,191,0.2);}
   .contact-item h4{font-family:'Orbitron',sans-serif;font-size:.7rem;letter-spacing:2px;color:var(--teal);margin-bottom:4px;}
   .contact-item p,.contact-item a{ display: flex;gap: 40px;font-size:.9rem;color:var(--muted);text-decoration:none;transition:color .3s;line-height:1.7;}
+  .contact-info {
+    display: flex;
+    gap: 40px;
+}
   .contact-item a:hover{color:var(--teal);}
   .contact-form{display:flex;flex-direction:column;gap:14px;}
   .contact-form input,.contact-form textarea{background:var(--card);border:1px solid rgba(45,212,191,0.2);color:var(--text);padding:13px 16px;font-family:'Inter',sans-serif;font-size:.9rem;outline:none;transition:all .3s;resize:none;}
@@ -555,14 +559,19 @@
         <div class="contact-icon">📍</div>
         <div>
           <h4>Addresses</h4>
-          <p> Al Barsha 1,<br/>Dubai, UAE</p>
-          <p>Mohy El-Din Abu El-Ezz,<br/>Giza, Egypt</p>
+            <div class="contact-info">
+                <p>Al Barsha 1,<br>Dubai, UAE</p>
+                <p>Mohy El-Din Abu El-Ezz,<br>Giza, Egypt</p>
+            </div>
         </div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">📞</div>
-        <div><h4>Phone</h4><a href="tel:+971559299016">(+97) 1 55 929 9016</a><br>
+        <div><h4>Phone</h4>
+          <div class="contact-info">
+        <a href="tel:+971559299016">(+97) 1 55 929 9016</a><br>
         <a href="tel:+201003908738">(+2) 01003908738</a>
+          </div>
         </div>
 
       </div>
